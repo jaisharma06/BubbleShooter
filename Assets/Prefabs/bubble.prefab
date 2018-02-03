@@ -91,11 +91,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   view:
     leftBorder: 0
-    rightBorder: 0
-    topBorder: 0
+    rightBorder: 10
+    topBorder: 10
     speed: 6
     radius: 0.5
-    angle: 180
+    angle: 175
     moving: 0
 --- !u!212 &212947008500440410
 SpriteRenderer:

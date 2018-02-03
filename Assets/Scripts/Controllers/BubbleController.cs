@@ -3,7 +3,7 @@
 [RequireComponent(typeof(SpriteRenderer))]
 public class BubbleController : MonoBehaviour
 {
-    public Bubble model;
+    public BubbleModel model;
     public BubbleView view;
 
     private float m_destroySpeed = 10.0f;
@@ -89,7 +89,7 @@ public class BubbleController : MonoBehaviour
 
     private void SetColor()
     {
-        model = new Bubble(Utils.Random<BubbleColor>());
+        model = new BubbleModel(Utils.Random<BubbleColor>());
         m_sprtiteRenderer.color = Utils.BubbleColorToColor(model.color);
     }
 
@@ -129,8 +129,13 @@ public class BubbleController : MonoBehaviour
         {
             var destroyPos = new Vector3(transform.position.x, 0, 0);
             var distance = Vector3.Distance(transform.position, destroyPos);
-            iTween.MoveTo(gameObject, destroyPos, distance / view.speed);
+            MoveTo(destroyPos, distance / view.speed);
         }
+    }
+
+    public void MoveTo(Vector3 targetPosition, float time)
+    {
+        iTween.MoveTo(gameObject, targetPosition, time);
     }
     #endregion
 }

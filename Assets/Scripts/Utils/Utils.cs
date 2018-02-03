@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using System.Collections;
 
 public static class Utils
 {
@@ -30,5 +31,19 @@ public static class Utils
                 return Color.cyan;
             default: return Color.clear;
         }
+    }
+
+    public static ArrayList FilterByColor(ArrayList bubbles, BubbleColor bubbleColor)
+    {
+        ArrayList filteredList = new ArrayList();
+        foreach(BubbleModel bubble in bubbles)
+        {
+            if(bubble.color == bubbleColor)
+            {
+                filteredList.Add(bubble);
+            }
+        }
+
+        return filteredList;
     }
 }

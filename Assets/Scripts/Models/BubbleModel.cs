@@ -1,9 +1,9 @@
 ﻿public enum BubbleColor { Red, Blue, Green, Pink, Yellow, Cyan, White}
 
-public class Bubble{
+public class BubbleModel{
     private BubbleColor m_color;
 
-    public Bubble(BubbleColor color)
+    public BubbleModel(BubbleColor color)
     {
         m_color = color;
     }
